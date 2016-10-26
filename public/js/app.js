@@ -35,7 +35,7 @@ SFFoodTruck.prototype._loading = function(bool) {
 }
 
 SFFoodTruck.prototype._handleRequestError = function() {
-  this.loading(false);
+  this._loading(false);
   this.request = null;
 }
 
@@ -59,7 +59,7 @@ SFFoodTruck.prototype._handleRequestSuccess = function(data) {
   this._loading(false);
 }
 
-SFFoodTruck.prototype._showInfoWindow = function(marker, foodtruck) {
+SFFoodTruck.prototype._showInfoWindow = function(foodtruck) {
   this.infoWindow.close();
   this.infoWindow.setContent(
     '<h2>'+foodtruck.applicant+'</h2>' +
@@ -72,7 +72,7 @@ SFFoodTruck.prototype._showInfoWindow = function(marker, foodtruck) {
     'Food description: ' + foodtruck.fooditems.join(', ') + "<br />" +
     '</p>'
   );
-  this.infoWindow.open(this.map, marker);
+  this.infoWindow.open(this.map, foodtruck.mapMarker);
 }
 
 SFFoodTruck.prototype._mergeTrucks = function(foodtrucks) {
