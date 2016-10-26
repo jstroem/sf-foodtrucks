@@ -1,0 +1,16 @@
+{
+  "name": "sf-foodtrucks",
+  "version": "1.0.0",
+  "description": "App for see food trucks in San Fran",
+  "main": "lib/app.js",
+  "scripts": {
+    "test": "node_modules/jasmine/bin/jasmine.js tests/**/*.js",
+    "downloadSFData": "curl https://data.sfgov.org/api/views/rqzj-sfat/rows.json?accessType=DOWNLOAD > data/sf_datasheet.json",
+    "start": "lib/app.js data/sf_datasheet.json public/ 3000"
+  },
+  "author": "Jesper Lindstrøm Nielsen <me@jstroem.com> (http://jstroem.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.5.2"
+  }
+}
