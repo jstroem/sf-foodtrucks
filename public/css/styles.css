@@ -30,6 +30,27 @@ button {
   font-size: 20px;
 }
 
+.checkbox {
+  display: block;
+  width:100%;
+  margin:2px 0 0;
+  padding:5px 0 3px;
+  font-size:80%;
+  cursor:pointer;
+  font-weight: bold;
+  line-height: 1;
+  color:#3184a1;
+  background:#fff;
+  text-align: center;
+  border-radius: 2px;
+  border:1px solid #3184a1;
+}
+
+.checkbox.active {
+  background:#3184a1;
+  color:#fff;
+}
+
 .text-center {
   text-align: center;
 }
@@ -46,10 +67,6 @@ button {
   border-radius: 2px;
   vertical-align: baseline;
   white-space: nowrap;
-}
-
-.label-active {
-  background:#55a131;
 }
 
 /** VIEWPORT **/
@@ -191,10 +208,6 @@ button {
   margin:0;
   text-align: center;
 }
-
-.selector ul li .label {
-  cursor:pointer;
-} 
 
 /** LOADER **/
 .loader {

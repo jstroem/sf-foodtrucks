@@ -18,7 +18,7 @@ var Selector = function() {
   }
 
   Selector.prototype._onItemClicked = function(event) {
-    if (event.target && event.target.matches('li .label')) {
+    if (event.target && event.target.matches('li .checkbox')) {
       this.toggle(event.target.innerText);
     }
   }
@@ -30,10 +30,10 @@ var Selector = function() {
     if (element) {
       if (add) {
         element.classList.add('selected');
-        element.children[0].classList.add('label-active');
+        element.children[0].classList.add('active');
       } else {
         element.classList.remove('selected');
-        element.children[0].classList.remove('label-active');
+        element.children[0].classList.remove('active');
       }
     }
   }
@@ -125,9 +125,9 @@ var Selector = function() {
 
   function createListItem(selected, title,all) {
     if (selected)
-      return '<li class="selected" data-value="'+title+'"><span class="label label-active">'+title+'</span></li>';
+      return '<li class="selected" data-value="'+title+'"><span class="checkbox active">'+title+'</span></li>';
     else
-      return '<li data-value="'+title+'"><span class="label">'+title+'</span></li>';
+      return '<li data-value="'+title+'"><span class="checkbox">'+title+'</span></li>';
   }
 
   Selector.prototype.render = function() {
