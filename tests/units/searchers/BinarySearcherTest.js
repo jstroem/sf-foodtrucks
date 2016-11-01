@@ -53,12 +53,12 @@ describe('BinarySearcher', function(){
     it('should return -lastPosition the element could have been.', function() {
        var arr = [1,2,2,2,2,2,3,5,7,7,7,7,7];
        var binarySearch = new BinarySearcher(arr);
-       expect(binarySearch._firstIndexOf(0)).toBe("-0");
-       expect(binarySearch._firstIndexOf(8)).toBe("-13");
-       expect(binarySearch._firstIndexOf(4)).toBe("-7");
-       expect(binarySearch._firstIndexOf(6)).toBe("-8");
-       expect(binarySearch._firstIndexOf(5.5)).toBe("-8");
-       expect(binarySearch._firstIndexOf(4.5)).toBe("-7");
+       expect(binarySearch._firstIndexOf(0)).toBe("0");
+       expect(binarySearch._firstIndexOf(8)).toBe("13");
+       expect(binarySearch._firstIndexOf(4)).toBe("7");
+       expect(binarySearch._firstIndexOf(6)).toBe("8");
+       expect(binarySearch._firstIndexOf(5.5)).toBe("8");
+       expect(binarySearch._firstIndexOf(4.5)).toBe("7");
     });
   });
 
@@ -100,12 +100,12 @@ describe('BinarySearcher', function(){
     it('should return -lastPosition the element could have been.', function() {
        var arr = [1,2,2,2,2,2,3,5,7,7,7,7,7];
        var binarySearch = new BinarySearcher(arr);
-       expect(binarySearch._lastIndexOf(0)).toBe("--1");
-       expect(binarySearch._lastIndexOf(8)).toBe("-12");
-       expect(binarySearch._lastIndexOf(4)).toBe("-6");
-       expect(binarySearch._lastIndexOf(6)).toBe("-7");
-       expect(binarySearch._lastIndexOf(1.1)).toBe("-0");
-       expect(binarySearch._lastIndexOf(0.1)).toBe("--1");
+       expect(binarySearch._lastIndexOf(0)).toBe("-1");
+       expect(binarySearch._lastIndexOf(8)).toBe("12");
+       expect(binarySearch._lastIndexOf(4)).toBe("6");
+       expect(binarySearch._lastIndexOf(6)).toBe("7");
+       expect(binarySearch._lastIndexOf(1.1)).toBe("0");
+       expect(binarySearch._lastIndexOf(0.1)).toBe("-1");
     });
   });
 
@@ -132,6 +132,22 @@ describe('BinarySearcher', function(){
       expect(binarySearch.getRange(10.9999,10.9999)).toEqual([10.9999]);
       expect(binarySearch.getRange(10.99991,10.99999)).toEqual([]);
       expect(binarySearch.getRange(10.71,10.998)).toEqual([]);
+    });
+  });
+
+  describe('My own test', function(){
+    it('should be the values i have expected', function(){
+      var arr = [3, 4, 5, 7, 8, 9];
+      var binarySearch = new BinarySearcher(arr);
+      expect(binarySearch._firstIndexOf(5.5)).toEqual("3");
+      expect(binarySearch._lastIndexOf(6.5)).toEqual("2");
+      expect(binarySearch.getRange(5.5,6.5)).toEqual([]);
+
+      expect(binarySearch._firstIndexOf(2)).toEqual("0");
+      expect(binarySearch._lastIndexOf(2)).toEqual("-1");
+
+      expect(binarySearch._firstIndexOf(10)).toEqual("6");
+      expect(binarySearch._lastIndexOf(10)).toEqual("5");
     });
   });
 
